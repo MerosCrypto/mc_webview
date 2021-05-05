@@ -1,5 +1,7 @@
 static:
-  {.passL: currentSourcePath().substr(0, high(currentSourcePath()) - 14) & "webview.o".}
+  const WEBVIEW_DIR: string = currentSourcePath().substr(0, high(currentSourcePath()) - 14)
+  discard staticExec "g++ --std=c++11 $(pkg-config --cflags gtk+-3.0 webkit2gtk-4.0) -c " & WEBVIEW_DIR & "webview/webview.cc"
+  {.passL: WEBVIEW_DIR & "webview.o".}
 
   when defined(linux):
     #Required so the string is considered static.
