@@ -1,3 +1,3 @@
-# Webview for Nim
+# Nim Webview
 
-A modified version of oskca's bindings for zserge's WebView.
+Minimal set of bindings around [Webview Org's Webview](https://github.com/webview/webview).
